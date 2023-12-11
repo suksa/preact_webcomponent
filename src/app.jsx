@@ -3,14 +3,15 @@ import output from './styles/app.css?inline'
 import Tab from './components/tab'
 import Item from './components/item'
 
-export function App({ globalsvcpage }) {
+export function App({ globalsvcpage, reqapidomain }) {
   const [shopData, setShopData] = useState(null)
   const [page, setPage] = useState(1)
   const itemLength = 9
   const pageLength = shopData ? shopData.length / itemLength : 1
+  const reqDomain = reqapidomain === undefined ? 'https://shop.nate.com' : reqapidomain
 
   const fetchData = async () => {
-    const res = await fetch('https://shop.nate.com/shopbox/js/data_shopbox_mobile.json')
+    const res = await fetch(`${reqDomain}/shopbox/js/data_shopbox_mobile.json`)
     const json = await res.json()
     setShopData(json)
   }
