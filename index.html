@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -7,8 +7,11 @@
     <title>Vite + Preact + TS</title>
   </head>
   <body>
-    <!-- <div id="app"></div> -->
-    <x-greeting name="Billy Jo"></x-greeting>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- 
+      globalsvcpage: 통계에 사용. 필수 값
+      뉴스/tv 는 news, 판은 mpann 값 사용 중
+     -->
+    <shop-box globalsvcpage="news"></shop-box>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

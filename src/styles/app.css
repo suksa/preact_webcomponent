@@ -1,0 +1,170 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.app {
+  --baseBackground: #fff;
+  --tabBackgorund: #eeeff1;
+  --tabLineColor: #e6e6e6;
+  --activeColor: #222;
+  --tabBorderColor: #d0d1d2;
+  --productColor: #222;
+  --pageButtonBorder: #d0d1d2;
+  --pageButtonBackground: #f6f6f9;
+  --pageButtonImg: url('https://m1.nateimg.co.kr/n3main/sets2/set_ic2.png');
+
+  background: var(--baseBackground);
+  margin: 0;
+  padding: 0 0 20px;
+  font-family: '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, '굴림', Gulim, Helvetica, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  .app {
+    --baseBackground: #262626;
+    --tabBackgorund: #1f1f1f;
+    --tabLineColor: #393939;
+    --activeColor: #d7d7d7;
+    --tabBorderColor: #393939;
+    --productColor: #d7d7d7;
+    --pageButtonBorder: #393939;
+    --pageButtonBackground: #1f1f1f;
+    --pageButtonImg: url('https://m1.nateimg.co.kr/n3main/sets2/set_ic2_dark.png');
+  }
+}
+.tab {
+  display: flex;
+  border-top: 1px solid var(--tabBorderColor);
+}
+.tab button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border: 0;
+  background: var(--tabBackgorund);
+  border-bottom: 1px solid var(--tabBorderColor);
+  height: 40px;
+  line-height: 40px;
+  flex: 1;
+  padding: 0;
+  font-size: 14px;
+  color: #777;
+  font-weight: 500;
+  cursor: pointer;
+}
+.tab button + button:before {
+  content: '';
+  position: absolute;
+  top: 13px;
+  left: 0;
+  width: 1px;
+  height: 12px;
+  background: var(--tabLineColor);
+}
+.tab button.active {
+  background: var(--baseBackground);
+  color: var(--activeColor);
+  border-bottom-color: transparent;
+}
+.tab button.active:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  border-left: 1px solid var(--tabBorderColor);
+  border-right: 1px solid var(--tabBorderColor);
+}
+.tab button.active:before,
+.tab button.active + button:before {
+  content: none;
+}
+.tab button.active:first-child:after {
+  border-left: none;
+}
+.tab button.active:last-child:after {
+  border-right: none;
+}
+.tab_list {
+  padding: 10px 8px;
+}
+.tab_list .section {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tab_list .section .item {
+  width: 33.33%;
+  padding: 0 2px;
+  text-align: center;
+  margin: 0 0 15px;
+}
+.tab_list .section .item a {
+  display: block;
+  text-decoration: none;
+}
+.tab_list .section .item .thumb {
+  font-size: 0;
+}
+.tab_list .section .item .thumb img {
+  width: 100%;
+  height: auto;
+}
+.tab_list .section .item .txt {
+  margin: 8px 0 0;
+  font-size: 14px;
+  letter-spacing: -1px;
+  line-height: 16px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  color: var(--productColor);
+}
+.pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pages .btn {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 28px;
+  overflow: hidden;
+  vertical-align: middle;
+  border: 1px solid var(--pageButtonBorder);
+  font-size: 0;
+  -webkit-appearance: none;
+  background-color: var(--pageButtonBackground);
+  cursor: pointer;
+}
+.pages .btn em {
+  display: block;
+  width: 8px;
+  height: 14px;
+  margin: 0 auto;
+  text-align: center;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: var(--pageButtonImg) 0 -288px no-repeat;
+  background-size: 64px auto;
+}
+.pages .btn.prev em {
+  background-position: 0 -288px;
+}
+.pages .btn.next em {
+  background-position: -8px -288px;
+}
+.pages .page {
+  margin: 0 30px;
+  color: #999;
+}
+.pages .page b {
+  color: var(--activeColor);
+  font-weight: 400;
+}
