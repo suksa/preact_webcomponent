@@ -1,0 +1,11 @@
+.app {
+  --baseBackground: #fff;
+  --tabBackgorund: #eeeff1;
+  --tabLineColor: #e6e6e6;
+  --activeColor: #222;
+  --tabBorderColor: #d0d1d2;
+  --productColor: #222;
+  --pageButtonBorder: #d0d1d2;
+  --pageButtonBackground: #f6f6f9;
+  --pageButtonImg: url('https://m1.nateimg.co.kr/n3main/sets2/set_ic2.png');
+}

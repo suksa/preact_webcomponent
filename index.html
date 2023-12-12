@@ -11,9 +11,11 @@
       globalsvcpage: 통계에 사용. 필수 값
       뉴스/tv 는 news, 판은 mpann 값 사용 중
 
-      reqapidomain: api 요청 도메인 설정
+      reqapidomain: api 요청 도메인 설정 (undefined면 https://shop.nate.com 으로 설정)
+
+      dark: dark모드 사용여부 false면 사용하지않음
      -->
-    <shop-box globalsvcpage="news" reqapidomain=""></shop-box>
+    <shop-box globalsvcpage="news" dark="false"></shop-box>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

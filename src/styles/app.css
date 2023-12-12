@@ -4,33 +4,10 @@
   box-sizing: border-box;
 }
 .app {
-  --baseBackground: #fff;
-  --tabBackgorund: #eeeff1;
-  --tabLineColor: #e6e6e6;
-  --activeColor: #222;
-  --tabBorderColor: #d0d1d2;
-  --productColor: #222;
-  --pageButtonBorder: #d0d1d2;
-  --pageButtonBackground: #f6f6f9;
-  --pageButtonImg: url('https://m1.nateimg.co.kr/n3main/sets2/set_ic2.png');
-
   background: var(--baseBackground);
   margin: 0;
   padding: 0 0 20px;
   font-family: '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, '굴림', Gulim, Helvetica, sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  .app {
-    --baseBackground: #262626;
-    --tabBackgorund: #1f1f1f;
-    --tabLineColor: #393939;
-    --activeColor: #d7d7d7;
-    --tabBorderColor: #393939;
-    --productColor: #d7d7d7;
-    --pageButtonBorder: #393939;
-    --pageButtonBackground: #1f1f1f;
-    --pageButtonImg: url('https://m1.nateimg.co.kr/n3main/sets2/set_ic2_dark.png');
-  }
 }
 .tab {
   display: flex;

@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'preact/hooks'
 import output from './styles/app.css?inline'
+import lightTheme from './styles/lightTheme.css?inline'
+import darkTheme from './styles/darkTheme.css?inline'
 import Tab from './components/tab'
 import Item from './components/item'
 
-export function App({ globalsvcpage, reqapidomain }) {
+export function App({ globalsvcpage, reqapidomain, dark }) {
   const [shopData, setShopData] = useState(null)
   const [page, setPage] = useState(1)
   const itemLength = 9
@@ -33,11 +35,15 @@ export function App({ globalsvcpage, reqapidomain }) {
 
     fetchData()
   }, [])
-
+  console.log(dark !== 'false')
   if (!shopData || shopData.length === 0) return null
   return (
     <>
-      <style>{output}</style>
+      <style>
+        {lightTheme}
+        {dark !== 'false' && darkTheme}
+        {output}
+      </style>
       <div class="app">
         <Tab data={shopData} itemLength={itemLength} page={page} setPage={setPage} />
         <div class="tab_list">
